@@ -35,6 +35,37 @@ body{background:radial-gradient(ellipse at 50% 100%,#0a1a3d 0%,#081030 45%,#0204
 #ctl .song,#pp{font:inherit;font-size:1rem;color:#ffd8cc;background:rgba(0,0,0,.45);border:1px solid rgba(255,190,30,.5);border-radius:20px;padding:7px 14px;cursor:pointer;max-width:60vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #ctl .song:hover,#pp:hover{background:rgba(120,80,10,.5)}
 .song input{display:none}
+  
+/* Personajes a los costados */
+.personaje {
+  position: fixed;
+  bottom: 2vh;
+  width: clamp(110px, 23vw, 280px);
+  height: auto;
+  max-height: 48vh;
+  object-fit: contain;
+  z-index: 20;
+  pointer-events: none;
+  user-select: none;
+}
+
+.personaje.izquierda {
+  left: 0;
+}
+
+.personaje.derecha {
+  right: 0;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+  .personaje {
+    width: 34vw;
+    max-height: 35vh;
+    bottom: 3vh;
+  }
+}
+
 </style>
 </head>
 <body>
