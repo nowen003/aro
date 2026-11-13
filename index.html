@@ -35,11 +35,11 @@ body{background:radial-gradient(ellipse at 50% 100%,#0a1a3d 0%,#081030 45%,#0204
 #ctl .song,#pp{font:inherit;font-size:1rem;color:#ffd8cc;background:rgba(0,0,0,.45);border:1px solid rgba(255,190,30,.5);border-radius:20px;padding:7px 14px;cursor:pointer;max-width:60vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #ctl .song:hover,#pp:hover{background:rgba(120,80,10,.5)}
 .song input{display:none}
-  
-/* Personajes a los costados */
+
+/* Personajes centrados con animación de entrada */
 .personaje {
   position: fixed;
-  bottom: 2vh;
+  opacity: 0;
   width: clamp(110px, 23vw, 280px);
   height: auto;
   max-height: 48vh;
@@ -47,14 +47,27 @@ body{background:radial-gradient(ellipse at 50% 100%,#0a1a3d 0%,#081030 45%,#0204
   z-index: 20;
   pointer-events: none;
   user-select: none;
+  animation: aparecer 1.6s ease-out forwards;
 }
 
 .personaje.izquierda {
-  left: 0;
+  left: 50%;
+  bottom: 2vh;
+  transform: translateX(calc(-100% - 10px)) translateY(30px);
+  animation-delay: 6.5s;
 }
 
 .personaje.derecha {
-  right: 0;
+  left: 50%;
+  bottom: 2vh;
+  transform: translateX(10px) translateY(30px);
+  animation-delay: 7s;
+}
+
+@keyframes aparecer {
+  0%   { opacity: 0; transform: translateY(40px); }
+  60%  { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Ajustes para celulares */
@@ -65,7 +78,6 @@ body{background:radial-gradient(ellipse at 50% 100%,#0a1a3d 0%,#081030 45%,#0204
     bottom: 3vh;
   }
 }
-
 </style>
 </head>
 <body>
@@ -150,8 +162,5 @@ file.addEventListener('change',function(){
   }
 });
 pp.addEventListener('click',function(){
-  if(aud.paused){aud.play();pp.textContent='❚❚'}else{aud.pause();pp.textContent='▶'}
-});
-</script>
-</body>
-</html>
+  if(aud.paused){aud.play();pp.textContent='
+
