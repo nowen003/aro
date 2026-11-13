@@ -53,12 +53,12 @@ body{background:radial-gradient(ellipse at 50% 100%,#0a1a3d 0%,#081030 45%,#0204
 
 .personaje.izquierda {
   left: 0;
-  animation-delay: 5s;
+  animation-delay: 4s;
 }
 
 .personaje.derecha {
   right: 0;
-  animation-delay: 5s;
+  animation-delay: 4s;
 }
 
 @keyframes aparecer {
@@ -72,7 +72,7 @@ body{background:radial-gradient(ellipse at 50% 100%,#0a1a3d 0%,#081030 45%,#0204
   .personaje {
     width: 34vw;
     max-height: 35vh;
-    bottom: 7vh;
+    bottom: 9vh;
   }
 }
 </style>
@@ -82,13 +82,16 @@ body{background:radial-gradient(ellipse at 50% 100%,#0a1a3d 0%,#081030 45%,#0204
 <div id="petals"></div>
 <div class="t">
   <span style="animation-delay:1s">SUERTE EN EL</span>
-  <span style="animation-delay:1.8s">PACIAL DE MAÑANAA</span>
-  <span class="s" style="animation-delay:2.6s">TEAMO MI SONIA</span>
+  <span style="animation-delay:1.8s">PARCIAL DE MAÑANAA</span>
+  <span class="s" style="animation-delay:2.6s">TEAMOOO MI SONIA</span>
 <img src="WhatsApp_Image_2026-11-13_at_17.08.20.jpeg" class="personaje izquierda" alt="Oso">
 
 <img src="WhatsApp_Image_2026-11-13_at_17.08.20_1.jpeg" class="personaje derecha" alt="Panda">
 </div>
 <div id="fx"></div>
+<div id="ctl">
+  <label class="song"><input type="file" id="file" accept="audio/*"><span id="lbl">♪ Agregar canción</span></label>
+  <button id="pp" hidden>❚❚</button>
 </div>
 <audio id="aud" loop></audio>
 <script>
