@@ -36,10 +36,10 @@ body{background:radial-gradient(ellipse at 50% 100%,#0a1a3d 0%,#081030 45%,#0204
 #ctl .song:hover,#pp:hover{background:rgba(120,80,10,.5)}
 .song input{display:none}
 
-/* Personajes centrados con animación de entrada */
+/* Personajes a los costados con animación de entrada */
 .personaje {
   position: fixed;
-  opacity: 0;
+  bottom: 2vh;
   width: clamp(110px, 23vw, 280px);
   height: auto;
   max-height: 48vh;
@@ -47,20 +47,17 @@ body{background:radial-gradient(ellipse at 50% 100%,#0a1a3d 0%,#081030 45%,#0204
   z-index: 20;
   pointer-events: none;
   user-select: none;
+  opacity: 0;
   animation: aparecer 1.6s ease-out forwards;
 }
 
 .personaje.izquierda {
-  left: 50%;
-  bottom: 2vh;
-  transform: translateX(calc(-100% - 10px)) translateY(30px);
+  left: 0;
   animation-delay: 6.5s;
 }
 
 .personaje.derecha {
-  left: 50%;
-  bottom: 2vh;
-  transform: translateX(10px) translateY(30px);
+  right: 0;
   animation-delay: 7s;
 }
 
@@ -167,4 +164,3 @@ pp.addEventListener('click',function(){
 </script>
 </body>
 </html>
-
